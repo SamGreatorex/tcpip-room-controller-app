@@ -2,17 +2,54 @@
     "adapters": [
         {
             "model": "GenericNetworkAdapter",
-            "ip": "tcp://192.168.0.27:4999",
+            "ip": "tcp://192.168.6.226:4999",
             "ports": [{
-                "id": "hue_light",
-                "name": "Hue Go Lamp!",
+                "id": "room1",
+                "name": "Meeting Room Controls",
                 "methods":[
                     {
-                        "id": "power",
-                        "name": "Power",
+                        "id": "room1",
+                        "name": "Stand-Up Lights",
                         "command": "%\r",
-                        "params": [{"id":"on", "name":"On", "value":"{\"hue_light\":\"on\"}"},
-                        {"id":"off", "name":"Off", "value":"{\"hue_light\":\"off\"}"}],
+                        "params": [
+                        {"id":"on", "name":"On", "value":"{\"roomName\":\"room1\",\"switchOn\":true}"},
+                        {"id":"off", "name":"Off", "value":"{\"roomName\":\"room1\",\"switchOn\":false}"}],
+                        "type": "actions"
+                    },
+                    {
+                        "id": "room2",
+                        "name": "Meeting Room 1 Lights",
+                        "command": "%\r",
+                        "params": [
+                            {"id":"on", "name":"On", "value":"{\"roomName\":\"room2\",\"switchOn\":true}"},
+                            {"id":"off", "name":"Off", "value":"{\"roomName\":\"room2\",\"switchOn\":false}"}],
+                        "type": "actions"
+                    },
+                    {
+                        "id": "room3",
+                        "name": "Board Room Lights",
+                        "command": "%\r",
+                        "params": [
+                            {"id":"on", "name":"On", "value":"{\"roomName\":\"room3\",\"switchOn\":true}"},
+                            {"id":"off", "name":"Off", "value":"{\"roomName\":\"room3\",\"switchOn\":false}"}],
+                        "type": "actions"
+                    },
+                    {
+                        "id": "room4",
+                        "name": "Meeting Room 2 Lights",
+                        "command": "%\r",
+                        "params": [
+                            {"id":"on", "name":"On", "value":"{\"roomName\":\"room4\",\"switchOn\":true}"},
+                            {"id":"off", "name":"Off", "value":"{\"roomName\":\"room4\",\"switchOn\":false}"}],
+                        "type": "actions"
+                    },
+                    {
+                        "id": "room5",
+                        "name": "Large Board Room Lights",
+                        "command": "%\r",
+                        "params": [
+                            {"id":"on", "name":"On", "value":"{\"roomName\":\"room5\",\"switchOn\":true}"},
+                            {"id":"off", "name":"Off", "value":"{\"roomName\":\"room5\",\"switchOn\":false}"}],
                         "type": "actions"
                     }
                 ]
@@ -20,7 +57,8 @@
         }
     ],
     "styles":[
-        "hue_light.icon=icon_light",
-        "hue_light.power.icon=icon_power"
+        "room1.icon=icon_light",
+        "room1.power.icon=icon_light"
+
     ]
 }

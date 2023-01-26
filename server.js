@@ -1,7 +1,7 @@
 const config = require('./config.js');
 const Net = require('net');
 const port = config.port;
-
+const api = require('./api.js');
 
 const server = new Net.Server();
 
@@ -17,19 +17,9 @@ server.on('connection', function(socket) {
     socket.on('data', function(chunk) {
 
         var jchunk = JSON.parse(chunk.toString());
-
-        if (typeof jchunk.hue_light != 'undefined'){
-            switch (jchunk.hue_light){
-                case 'on':
-                    console.log('Light has been switched on');
-                   // hue_put({on: true, sat: hue.SAT_HIGH, bri: hue.g_BRI, hue: hue.COLOR_WHITE});
-                    break;
-                case 'off':
-                    console.log('Light has been switched off');
-                   // hue_put({on: false, sat: hue.SAT_HIGH, bri: hue.g_BRI, hue: hue.COLOR_WHITE});
-                    break;
-            }
-        }
+        console.log('jChunk', jchunk);
+        console.log('Sending Message:', jchunk)
+        api.sendMessage(jchunk);
     });
 
     socket.on('end', function() {
