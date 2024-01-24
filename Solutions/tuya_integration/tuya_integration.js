@@ -2,8 +2,8 @@ const axios = require("axios");
 const crypto = require("crypto");
 const qs = require("qs");
 const CryptoJS = require("crypto-js");
-const tuya_client_id = "r5eduv9atdfwjsxhjpd5";
-const tuya_client_secret = "96dbd5be7d764190a81267f5c98e7b80";
+const tuya_client_id = "INSERT HERE";
+const tuya_client_secret = "INSERT HERE";
 const tuya_url = "https://openapi.tuyaeu.com";
 
 let timestamp = "";
