@@ -1,0 +1,34 @@
+{
+    "adapters": [
+      {
+        "model": "GenericNetworkAdapter",
+        "ip": "tcp://192.168.6.226:4999",
+        "ports": [
+          {
+            "id": "hue_light",
+            "name": "Hue Go Lamp!",
+            "methods": [
+              {
+                "id": "power",
+                "name": "Power",
+                "command": "%\r",
+                "params": [
+                  {
+                    "id": "on",
+                    "name": "On",
+                    "value": "{\"hue_light\":\"on\"}"
+                  },
+                  {
+                    "id": "off",
+                    "name": "Off",
+                    "value": "{\"hue_light\":\"off\"}"
+                  }
+                ],
+                "type": "actions"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

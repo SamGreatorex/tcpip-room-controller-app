@@ -5,7 +5,7 @@
             "ip": "tcp://192.168.6.226:4999",
             "ports": [{
                 "id": "room1",
-                "name": "Meeting Room Controls",
+                "name": "Meeting Room Controls2",
                 "methods":[
                     {
                         "id": "room1",

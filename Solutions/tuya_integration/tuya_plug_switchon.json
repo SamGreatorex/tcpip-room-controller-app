@@ -1,0 +1,37 @@
+{
+    "adapters": [
+      {
+        "model": "GenericNetworkAdapter",
+        "ip": "tcp://192.168.6.226:4999",
+        "ports": [
+          {
+            "id": "tuya_plug",
+            "name": "Meeting Room Controls",
+            "methods": [
+              {
+                "id": "power",
+                "name": "Stand-Up Lights",
+                "command": "%\r",
+                "params": [
+                  {
+                    "id": "on",
+                    "name": "On",
+                    "value": "{\"integration\":\"tuya_lamp\",\"roomName\":\"ise_trade_floor\",\"action\":\"switch_on\"}"
+                  },
+                  {
+                    "id": "off",
+                    "name": "Off",
+                    "value": "{\"integration\":\"tuya_lamp\",\"roomName\":\"ise_trade_floor\",\"action\":\"switch_off\"}"
+                  }
+                ],
+                "type": "actions"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+        "styles":[
+        "tuya_plug.power.icon=icon_power"
+    ]
+  }
